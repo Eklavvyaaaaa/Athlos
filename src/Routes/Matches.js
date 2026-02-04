@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { createMatchSchema, listMatchesQuerySchema } from "../validation/matches";
+import { createMatchSchema, listMatchesQuerySchema } from "../validation/matches.js";
 import {matches} from "../db/schema.js";
 import {db} from "../db/db.js";
-import { getMatchStatus } from "../utils/match-status";
+import { getMatchStatus } from "../utils/match-status.js";
 import { desc } from "drizzle-orm";
 
 
