@@ -4,6 +4,7 @@ import {matches} from "../db/schema.js";
 import {db} from "../db/db.js";
 import { getMatchStatus } from "../utils/match-status.js";
 import { desc } from "drizzle-orm";
+import { commentaryRouter } from "./commentary.js";
 
 
 export const matchRouter = Router();
@@ -58,4 +59,6 @@ matchRouter.post('/',async (req, res) => {
     res.status(500).json({error: 'failed to create a match.', details: JSON.stringify(e)});
   }
 
-})
+});
+
+matchRouter.use("/:id/commentary", commentaryRouter);
